@@ -2048,8 +2048,8 @@
     }
 
     function startGame() {
+      stopAllMediaAndIframes();
       try { localStorage.removeItem('CHEER_2PICK_SAVE'); } catch(e){}
-      battleHistory = [];
       battleHistory = [];
       matchIndex = 0;
       startTimer();
@@ -2406,6 +2406,8 @@
         const vidEl = document.getElementById(`video-${side}`);
         if (vidEl) { vidEl.pause(); vidEl.src = ''; }
       });
+      const champContainer = document.getElementById('champion-media-container');
+      if (champContainer) champContainer.innerHTML = '';
       if (typeof stopTimer === 'function') stopTimer();
       if (typeof stopSeekbarTracker === 'function') stopSeekbarTracker();
     }
@@ -2418,10 +2420,12 @@
     }
 
     function switchScreen(screenId) {
+      if (screenId === 'intro-screen' || screenId === 'discography-screen') {
+        stopAllMediaAndIframes();
+      }
       document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
       const target = document.getElementById(screenId);
       if (target) target.classList.add('active');
-      if (screenId === 'intro-screen') stopAllMediaAndIframes();
     }
 
     function extractVideoId(song) {
