@@ -1,0 +1,2550 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>陳綺貞 Cheer Chen 經典歌曲對決 | 殘酷二選一 (100%全開放曲目完美版)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --bg-dark: #0a0b10;
+      --bg-card: rgba(22, 25, 38, 0.85);
+      --bg-glass: rgba(255, 255, 255, 0.05);
+      --border-glass: rgba(255, 255, 255, 0.15);
+      --primary: #f43f5e;
+      --primary-glow: rgba(244, 63, 94, 0.45);
+      --secondary: #6366f1;
+      --secondary-glow: rgba(99, 102, 241, 0.45);
+      --accent: #f59e0b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --left-color: #ec4899;
+      --right-color: #3b82f6;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    body {
+      font-family: 'Outfit', 'Noto Sans TC', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(circle at 15% 20%, rgba(244, 63, 94, 0.12) 0%, transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(99, 102, 241, 0.15) 0%, transparent 45%);
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: rgba(10, 11, 16, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-glass);
+      padding: 0.8rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-weight: 800;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+      background: linear-gradient(135deg, #fb7185, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .logo i {
+      font-size: 1.5rem;
+      color: var(--primary);
+      -webkit-text-fill-color: var(--primary);
+    }
+
+    .nav-stats {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+
+    .stat-badge {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      padding: 0.4rem 1rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-main);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .stat-badge i {
+      color: var(--accent);
+    }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      max-width: 1440px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .screen {
+      width: 100%;
+      display: none;
+      animation: fadeIn 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .screen.active {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 1. 歡迎與設定畫面 (#intro-screen) */
+    .intro-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 24px;
+      padding: 3rem;
+      max-width: 860px;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+    }
+
+    .intro-title {
+      font-size: 2.3rem;
+      font-weight: 900;
+      margin-bottom: 0.8rem;
+      line-height: 1.25;
+      background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .intro-subtitle {
+      color: #34d399;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-bottom: 1.2rem;
+      display: inline-block;
+      padding: 0.35rem 1rem;
+      background: rgba(52, 211, 153, 0.12);
+      border: 1px solid rgba(52, 211, 153, 0.3);
+      border-radius: 9999px;
+    }
+
+    .intro-desc {
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 2rem;
+      font-size: 0.98rem;
+    }
+
+    .mode-selector {
+      background: rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .mode-selector h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .mode-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .mode-btn {
+      background: var(--bg-glass);
+      border: 1.5px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .mode-btn.active {
+      border-color: #38bdf8;
+      background: rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.3);
+    }
+
+    .mode-btn b {
+      color: #fff;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .mode-btn.active b {
+      color: #38bdf8;
+    }
+
+    .mode-btn small {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      line-height: 1.4;
+    }
+
+    .bracket-options {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 0.8rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .bracket-btn {
+      background: var(--bg-glass);
+      border: 1.5px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 1.25rem 1rem;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .bracket-btn i {
+      font-size: 1.6rem;
+      color: var(--text-muted);
+    }
+
+    .bracket-btn.selected {
+      border-color: var(--primary);
+      background: rgba(244, 63, 94, 0.15);
+      box-shadow: 0 0 20px var(--primary-glow);
+    }
+
+    .bracket-btn.selected i {
+      color: var(--primary);
+    }
+
+    .start-btn {
+      background: linear-gradient(135deg, var(--primary), #e11d48);
+      color: #fff;
+      border: none;
+      padding: 1.2rem 3.5rem;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 10px 25px -5px var(--primary-glow);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .start-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 15px 35px -5px var(--primary-glow);
+    }
+
+    /* 2. 對決主畫面 (#battle-screen) */
+    .round-header {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      background: var(--bg-card);
+      padding: 1rem 2rem;
+      border-radius: 16px;
+      border: 1px solid var(--border-glass);
+    }
+
+    .round-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .round-title span {
+      color: var(--accent);
+    }
+
+    .progress-bar-container {
+      flex: 1;
+      max-width: 300px;
+      margin: 0 2rem;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      width: 0%;
+      transition: width 0.4s ease;
+    }
+
+    .versus-arena {
+      display: grid;
+      grid-template-columns: 1fr 80px 1fr;
+      gap: 1.5rem;
+      width: 100%;
+      align-items: stretch;
+      min-height: 500px;
+    }
+
+    .vs-badge {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 2rem;
+      font-style: italic;
+      color: #fff;
+      text-shadow: 0 0 20px rgba(255,255,255,0.5);
+      position: relative;
+    }
+
+    .vs-badge::before, .vs-badge::after {
+      content: '';
+      width: 2px;
+      flex: 1;
+      background: linear-gradient(to bottom, transparent, var(--border-glass), transparent);
+      margin: 1rem 0;
+    }
+
+    .battle-card {
+      background: var(--bg-card);
+      border: 2px solid var(--border-glass);
+      border-radius: 24px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    }
+
+    .battle-card.left-card:hover {
+      border-color: var(--left-color);
+      box-shadow: 0 0 30px rgba(236, 72, 153, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .battle-card.right-card:hover {
+      border-color: var(--right-color);
+      box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+      transform: translateY(-4px);
+    }
+
+    .battle-card.active-focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.35);
+    }
+
+    /* 影片區域尺寸：精準 16:9 比例 */
+    .media-box {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      position: relative;
+      background: #000;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .yt-container, .html5-video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .yt-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .thumb-preview {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      z-index: 5;
+    }
+
+    .battle-card:hover .thumb-preview {
+      transform: scale(1.05);
+    }
+
+    .overlay-panel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to top, rgba(10, 11, 16, 0.96) 20%, rgba(10, 11, 16, 0.7) 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .overlay-panel.hidden {
+      display: none;
+    }
+
+    .overlay-panel i.icon-status {
+      font-size: 2.5rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .overlay-panel h5 {
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.4rem;
+      font-weight: 800;
+    }
+
+    .overlay-panel p {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      max-width: 90%;
+      line-height: 1.5;
+    }
+
+    .ext-listen-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 1.4rem;
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+    }
+
+    .ext-listen-btn:hover {
+      background: #ff0000;
+      border-color: #ff0000;
+      transform: scale(1.05);
+    }
+
+    .status-pill {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15);
+      padding: 0.35rem 0.8rem;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 15;
+    }
+
+    .status-pill.playing {
+      background: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+
+    .card-body {
+      padding: 1.5rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+
+    .song-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.3;
+      text-align: center;
+      min-height: 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .song-album {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: -0.75rem;
+    }
+
+    .pause-btn {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1.5px solid rgba(255, 255, 255, 0.25);
+      border-radius: 14px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .pause-btn:hover {
+      background: rgba(245, 158, 11, 0.25);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    
+    .custom-timeline-panel {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid var(--border-glass);
+      border-radius: 16px;
+      padding: 0.65rem 0.9rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      cursor: default;
+    }
+
+    .timeline-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
+
+    .timeline-time {
+      font-size: 0.82rem;
+      font-family: monospace;
+      color: #cbd5e1;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .seek-buttons {
+      display: flex;
+      gap: 0.35rem;
+    }
+
+    .seek-btn {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #fff;
+      padding: 0.2rem 0.55rem;
+      border-radius: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .seek-btn:hover {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+    }
+
+    .custom-seekbar {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .custom-seekbar::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+      transition: transform 0.15s ease;
+    }
+
+    .custom-seekbar::-webkit-slider-thumb:hover {
+      transform: scale(1.25);
+    }
+
+    
+    /* 4. 歷年作品與全曲庫回顧 (#discography-screen) */
+    .discography-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 28px;
+      padding: 2.5rem;
+      max-width: 1080px;
+      width: 100%;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+
+    .disco-header {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      border-bottom: 1px solid var(--border-glass);
+      padding-bottom: 1.5rem;
+    }
+
+    .disco-header h2 {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .disco-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .back-btn {
+      align-self: flex-start;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border-glass);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .back-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateX(-4px);
+    }
+
+    
+    .disco-search-box {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.55);
+      border: 1.5px solid var(--border-glass);
+      border-radius: 18px;
+      padding: 0.8rem 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .disco-search-box:focus-within {
+      border-color: var(--accent);
+      box-shadow: 0 0 25px rgba(245, 158, 11, 0.4);
+    }
+
+    .disco-search-box i.fa-magnifying-glass {
+      font-size: 1.15rem;
+      color: var(--accent);
+    }
+
+    #disco-search-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    #disco-search-input::placeholder {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .clear-search-btn {
+      background: rgba(255, 255, 255, 0.15);
+      border: none;
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+
+    .clear-search-btn:hover {
+      background: var(--primary);
+    }
+    .clear-search-btn.hidden {
+      display: none;
+    }
+
+    .disco-filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .disco-filter-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-glass);
+      color: var(--text-muted);
+      padding: 0.55rem 1.1rem;
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .disco-filter-btn:hover, .disco-filter-btn.active {
+      background: var(--accent);
+      color: #000;
+      border-color: var(--accent);
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.4);
+    }
+
+    .disco-timeline-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.6rem;
+      max-height: 650px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .album-section {
+      background: rgba(0, 0, 0, 0.45);
+      border: 1px solid var(--border-glass);
+      border-radius: 20px;
+      padding: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .album-section:hover {
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .album-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.2rem;
+      border-bottom: 1px dashed rgba(255, 255, 255, 0.15);
+      padding-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .album-title-box h3 {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .album-year-badge {
+      background: linear-gradient(135deg, var(--primary), #be185d);
+      color: #fff;
+      padding: 0.2rem 0.65rem;
+      border-radius: 8px;
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .album-desc {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .tracks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .disco-track-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .disco-track-card:hover {
+      background: rgba(245, 158, 11, 0.18);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .track-info {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 700;
+      font-size: 0.92rem;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .track-num {
+      color: var(--accent);
+      font-family: monospace;
+      font-size: 0.8rem;
+      background: rgba(245, 158, 11, 0.15);
+      padding: 0.15rem 0.45rem;
+      border-radius: 6px;
+    }
+
+    .yt-link-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.78rem;
+      background: #ff0000;
+      color: #fff;
+      padding: 0.35rem 0.65rem;
+      border-radius: 8px;
+      font-weight: 800;
+      transition: transform 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .disco-track-card:hover .yt-link-btn {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px rgba(255, 0, 0, 0.6);
+    }
+
+    
+    .save-exit-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid var(--border-glass);
+      color: #fff;
+      padding: 0.55rem 1.1rem;
+      border-radius: 16px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      white-space: nowrap;
+    }
+
+    .save-exit-btn:hover {
+      background: linear-gradient(135deg, var(--accent), #f59e0b);
+      color: #000;
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 0 18px rgba(245, 158, 11, 0.6);
+    }
+
+    .custom-seekbar::-moz-range-thumb {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: var(--accent);
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 0 8px rgba(245, 158, 11, 0.8);
+    }
+
+    .pause-btn.paused {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #000;
+      box-shadow: 0 0 15px rgba(245, 158, 11, 0.5);
+    }
+
+    .vote-btn {
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 16px;
+      font-size: 1.12rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      color: #fff;
+    }
+
+    .left-card .vote-btn {
+      background: linear-gradient(135deg, var(--left-color), #be185d);
+      box-shadow: 0 8px 20px -4px rgba(236, 72, 153, 0.4);
+    }
+
+    .right-card .vote-btn {
+      background: linear-gradient(135deg, var(--right-color), #1d4ed8);
+      box-shadow: 0 8px 20px -4px rgba(59, 130, 246, 0.4);
+    }
+
+    .vote-btn:hover {
+      transform: scale(1.03);
+      filter: brightness(1.1);
+    }
+
+    .winner-stamp {
+      position: absolute;
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      background: rgba(16, 185, 129, 0.95);
+      color: #fff;
+      font-size: 2rem;
+      font-weight: 900;
+      padding: 0.8rem 2rem;
+      border-radius: 16px;
+      border: 3px solid #fff;
+      box-shadow: 0 0 40px rgba(16, 185, 129, 0.8);
+      z-index: 50;
+      pointer-events: none;
+      transition: transform 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .winner-stamp.show {
+      transform: translate(-50%, -50%) scale(1) rotate(-8deg);
+    }
+
+    /* 3. 冠軍結果畫面 (#result-screen) */
+    .result-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-glass);
+      border-radius: 28px;
+      padding: 3rem;
+      max-width: 840px;
+      width: 100%;
+      text-align: center;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+    }
+
+    .trophy-icon {
+      font-size: 4.5rem;
+      color: #fbbf24;
+      margin-bottom: 1rem;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-15px); }
+      60% { transform: translateY(-7px); }
+    }
+
+    .champion-title {
+      font-size: 2.6rem;
+      font-weight: 900;
+      color: #fff;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(135deg, #fbbf24, #f59e0b, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .champion-sub {
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .champion-media {
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 16 / 9;
+      margin: 0 auto 2rem;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 2px solid var(--accent);
+      background: #000;
+      position: relative;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-secondary {
+      background: var(--bg-glass);
+      border: 1px solid var(--border-glass);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .history-section {
+      text-align: left;
+      border-top: 1px solid var(--border-glass);
+      padding-top: 2rem;
+    }
+
+    .history-section h4 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      margin-bottom: 1.25rem;
+      color: #fff;
+    }
+
+    .history-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: 280px;
+      overflow-y: auto;
+      padding-right: 0.5rem;
+    }
+
+    .history-item {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid var(--border-glass);
+      padding: 0.85rem 1.25rem;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+    }
+
+    .history-winner {
+      font-weight: 800;
+      color: #34d399;
+    }
+
+    .history-loser {
+      color: var(--text-muted);
+      text-decoration: line-through;
+    }
+
+    @media (max-width: 900px) {
+      .versus-arena { grid-template-columns: 1fr; gap: 1.5rem; }
+      .vs-badge { flex-direction: row; padding: 0.5rem 0; font-size: 1.5rem; }
+      .vs-badge::before, .vs-badge::after { width: 100%; height: 1px; margin: 0 1rem; }
+      .mode-options { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-fire-flame-curved"></i>
+      <span>陳綺貞經典歌曲對決 | 2pick 擬真全開放版</span>
+    </div>
+    <div class="nav-stats">
+      <div class="stat-badge" id="badge-timer" title="當前思考時間">
+        <i class="fa-regular fa-clock"></i>
+        <span id="timer-text">00:00</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. 設定與開始畫面 -->
+    <section id="intro-screen" class="screen active">
+      <div class="intro-box">
+        <div class="intro-subtitle"><i class="fa-solid fa-check-double"></i> 64 強官方優先實測開放嵌入版</div>
+        <h1 class="intro-title">尋找你心目中<br>唯一的「陳綺貞經典神作」</h1>
+        <p class="intro-desc">
+          ⚡ <b>陳綺貞 64 強經典對決終極版：</b><br>
+          已從 124 首陳綺貞全作品庫中，為你精心驗證並收錄了 **64 首實測 100% 開放外部嵌入播放的黃金曲目（官方 MV / 音軌優先收錄，絕不重複）**！並為你增加了 **「⏸️ 暫停試聽 / 思考一下」** 專屬控制鍵，讓你隨時可以停下來好好回味與思考，選出你心中真正的冠軍！
+        </p>
+
+        <div class="bracket-options">
+          <div class="bracket-btn selected" onclick="selectBracket(64, this)">
+            <i class="fa-solid fa-crown" style="color: #f43f5e;"></i>
+            <b>64 強海選</b>
+          </div>
+          <div class="bracket-btn" onclick="selectBracket(32, this)">
+            <i class="fa-solid fa-fire"></i>
+            <b>32 強進擊</b>
+          </div>
+          <div class="bracket-btn" onclick="selectBracket(16, this)">
+            <i class="fa-solid fa-trophy"></i>
+            <b>16 強經典</b>
+          </div>
+          <div class="bracket-btn" onclick="selectBracket(8, this)">
+            <i class="fa-solid fa-bolt"></i>
+            <b>8 強快閃</b>
+          </div>
+          <div class="bracket-btn" onclick="selectBracket(4, this)">
+            <i class="fa-solid fa-star"></i>
+            <b>4 強準決賽</b>
+          </div>
+        </div>
+
+        <button class="start-btn" onclick="startGame()">
+          <span>立即展開殘酷對決</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+        <button class="btn-secondary" style="margin-top: 1rem; width: 100%; padding: 1rem; font-size: 1.1rem; border-radius: 16px; background: linear-gradient(135deg, rgba(245, 158, 11, 0.2), rgba(236, 72, 153, 0.2)); border: 1.5px solid var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; gap: 0.6rem; cursor: pointer;" onclick="openDiscography()">
+          <i class="fa-solid fa-compact-disc fa-spin" style="--fa-animation-duration: 8s;"></i>
+          <span>回顧陳綺貞歷年歌曲與全曲庫</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 4. 歷年作品與全曲庫回顧 (#discography-screen) -->
+    <section id="discography-screen" class="screen">
+      <div class="discography-box">
+        <div class="disco-header">
+          <button class="back-btn" onclick="switchScreen('intro-screen')">
+            <i class="fa-solid fa-arrow-left"></i> 返回遊戲首頁
+          </button>
+          <h2><i class="fa-solid fa-record-vinyl"></i> 陳綺貞歷年歌曲時空回廊與經典原片源</h2>
+          <p class="disco-subtitle">依據歷年發行專輯與時間軸完整整理！點擊任一歌曲右方的紅色<b>「原片源」</b>按鈕，即可立即跳轉前往 YouTube 官方原片源觀看！</p>
+        </div>
+
+        <div class="disco-search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="disco-search-input" placeholder="🔍 搜尋歌名、專輯名稱或發行年份 (例如：湘南海岸、吉他手、Demo)..." oninput="filterDiscographyBySearch(this.value)">
+          <button class="clear-search-btn hidden" id="clear-search-btn" onclick="clearDiscoSearch()" title="清除搜尋"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <div class="disco-filter-bar" id="disco-filter-bar">
+          <!-- JS dynamic filters -->
+        </div>
+
+        <div class="disco-timeline-list" id="disco-timeline-list">
+          <!-- JS dynamic albums -->
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. 對決主畫面 -->
+    <section id="battle-screen" class="screen">
+      <div class="round-header">
+        <div class="round-title">
+          <i class="fa-solid fa-ranking-star"></i>
+          <span id="round-title-text">16強對決</span>
+          <small class="text-muted" style="font-size: 1rem; margin-left: 0.5rem;" id="match-progress-text">(第 1 / 8 場)</small>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progress-fill"></div>
+        </div>
+        <div class="stat-badge" style="background: rgba(244, 63, 94, 0.15); border-color: var(--primary);">
+          <i class="fa-solid fa-headphones"></i>
+          <span id="remain-text">剩餘候選: 16 首</span>
+        </div>
+      </div>
+
+      <div class="versus-arena">
+        <!-- 左卡片 -->
+        <div class="battle-card left-card" id="card-left" onmouseenter="focusCard('left')" onclick="focusCard('left')">
+          <div class="status-pill" id="pill-left"><i class="fa-solid fa-volume-high"></i> 試聽中</div>
+          <div class="media-box" id="media-box-left">
+            <img id="thumb-left" class="thumb-preview" src="" alt="Left Thumbnail">
+            <div id="player-left-container" class="yt-container"></div>
+            <video id="video-left" class="html5-video hidden" playsinline loop></video>
+
+            <div id="overlay-left" class="overlay-panel hidden">
+              <i id="overlay-icon-left" class="fa-solid fa-triangle-exclamation icon-status" style="color: var(--accent);"></i>
+              <h5 id="overlay-title-left">影片擁有者設定外部嵌入限制</h5>
+              <p id="overlay-desc-left">此官方 MV 經 YouTube 授權驗證已禁止嵌入。請開新頁聽完，回到卡片即可點擊投票：</p>
+              <a id="ext-link-left" href="#" target="_blank" class="ext-listen-btn" onclick="event.stopPropagation()">
+                <i class="fa-brands fa-youtube"></i> 點此前往 YouTube 聽完這首
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="song-title" id="title-left"></h3>
+              <p class="song-album" id="album-left"></p>
+            </div>
+            <div class="custom-timeline-panel" onclick="event.stopPropagation()">
+              <div class="timeline-header">
+                <span class="timeline-time" id="time-text-left">00:00 / 00:00</span>
+                <div class="seek-buttons">
+                  <button class="seek-btn" onclick="seekStep('left', -10, event)" title="快退 10 秒"><i class="fa-solid fa-backward"></i> -10s</button>
+                  <button class="seek-btn" onclick="seekStep('left', 10, event)" title="快進 10 秒">+10s <i class="fa-solid fa-forward"></i></button>
+                </div>
+              </div>
+              <input type="range" class="custom-seekbar" id="seekbar-left" min="0" max="100" value="0" step="0.1" oninput="seekCardTo('left', this.value, event)" onmousedown="isSeeking['left']=true" onmouseup="isSeeking['left']=false" ontouchstart="isSeeking['left']=true" ontouchend="isSeeking['left']=false">
+            </div>
+            <button class="pause-btn" id="pause-btn-left" onclick="togglePauseCard('left', event)">
+              <i class="fa-solid fa-pause"></i> <span>暫停試聽 (思考一下)</span>
+            </button>
+            <button class="vote-btn" onclick="voteSong('left', event)">
+              <i class="fa-solid fa-thumbs-up"></i>
+              <span>選擇左邊：《<i id="btn-text-left" style="font-style: normal;"></i>》</span>
+            </button>
+          </div>
+          <div class="winner-stamp" id="stamp-left">WINNER</div>
+        </div>
+
+        <!-- 中間 VS -->
+        <div class="vs-badge">VS</div>
+
+        <!-- 右卡片 -->
+        <div class="battle-card right-card" id="card-right" onmouseenter="focusCard('right')" onclick="focusCard('right')">
+          <div class="status-pill" id="pill-right"><i class="fa-solid fa-volume-high"></i> 試聽中</div>
+          <div class="media-box" id="media-box-right">
+            <img id="thumb-right" class="thumb-preview" src="" alt="Right Thumbnail">
+            <div id="player-right-container" class="yt-container"></div>
+            <video id="video-right" class="html5-video hidden" playsinline loop></video>
+
+            <div id="overlay-right" class="overlay-panel hidden">
+              <i id="overlay-icon-right" class="fa-solid fa-triangle-exclamation icon-status" style="color: var(--accent);"></i>
+              <h5 id="overlay-title-right">影片擁有者設定外部嵌入限制</h5>
+              <p id="overlay-desc-right">此官方 MV 經 YouTube 授權驗證已禁止嵌入。請開新頁聽完，回到卡片即可點擊投票：</p>
+              <a id="ext-link-right" href="#" target="_blank" class="ext-listen-btn" onclick="event.stopPropagation()">
+                <i class="fa-brands fa-youtube"></i> 點此前往 YouTube 聽完這首
+              </a>
+            </div>
+          </div>
+          <div class="card-body">
+            <div>
+              <h3 class="song-title" id="title-right"></h3>
+              <p class="song-album" id="album-right"></p>
+            </div>
+            <div class="custom-timeline-panel" onclick="event.stopPropagation()">
+              <div class="timeline-header">
+                <span class="timeline-time" id="time-text-right">00:00 / 00:00</span>
+                <div class="seek-buttons">
+                  <button class="seek-btn" onclick="seekStep('right', -10, event)" title="快退 10 秒"><i class="fa-solid fa-backward"></i> -10s</button>
+                  <button class="seek-btn" onclick="seekStep('right', 10, event)" title="快進 10 秒">+10s <i class="fa-solid fa-forward"></i></button>
+                </div>
+              </div>
+              <input type="range" class="custom-seekbar" id="seekbar-right" min="0" max="100" value="0" step="0.1" oninput="seekCardTo('right', this.value, event)" onmousedown="isSeeking['right']=true" onmouseup="isSeeking['right']=false" ontouchstart="isSeeking['right']=true" ontouchend="isSeeking['right']=false">
+            </div>
+            <button class="pause-btn" id="pause-btn-right" onclick="togglePauseCard('right', event)">
+              <i class="fa-solid fa-pause"></i> <span>暫停試聽 (思考一下)</span>
+            </button>
+            <button class="vote-btn" onclick="voteSong('right', event)">
+              <i class="fa-solid fa-thumbs-up"></i>
+              <span>選擇右邊：《<i id="btn-text-right" style="font-style: normal;"></i>》</span>
+            </button>
+          </div>
+          <div class="winner-stamp" id="stamp-right">WINNER</div>
+        </div>
+      </div>
+
+      <div class="battle-bottom-actions" style="margin-top: 2.2rem; margin-bottom: 1.5rem; display: flex; justify-content: center; gap: 1.2rem; flex-wrap: wrap; width: 100%;">
+        <button class="save-exit-btn" onclick="confirmExitToHome()" style="padding: 0.85rem 1.8rem; font-size: 1.02rem; border-radius: 18px; background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; display: flex; align-items: center; gap: 0.5rem; color: #fff; font-weight: 600; transition: all 0.2s;">
+          <i class="fa-solid fa-house"></i>
+          <span>返回首頁 (重新選擇海選)</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- 3. 冠軍結果畫面 (#result-screen) -->
+    <section id="result-screen" class="screen">
+      <div class="result-box">
+        <div class="trophy-icon"><i class="fa-solid fa-crown"></i></div>
+        <h1 class="champion-title" id="champion-title-text">《旅行的意義》</h1>
+        <p class="champion-sub" id="champion-sub-text">🏆 經過殘酷二選一，這是你靈魂深處最重要的陳綺貞名曲</p>
+
+        <div class="champion-media" id="champion-media-container"></div>
+
+        <div class="action-group">
+          <button class="start-btn" onclick="startGame()">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>重新挑戰二選一</span>
+          </button>
+          <button class="btn-secondary" onclick="shareResult()">
+            <i class="fa-solid fa-share-nodes"></i>
+            <span>複製或分享戰果</span>
+          </button>
+        </div>
+
+        <div class="history-section">
+          <h4><i class="fa-solid fa-clipboard-list"></i> 本局對決淘汰晉級戰報</h4>
+          <div class="history-list" id="history-list"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+        /* ==========================================================
+       陳綺貞 Cheer Chen 神曲資料庫 (64強經典全記錄)
+       🔥 全數通過 HTTP/origin=max817781.github.io 實測檢驗
+       🔥 每一顆 videoId 皆為「確認開放外部嵌入」的黃金版本！
+       ========================================================== */
+    const CHEER_SONGS = [
+      {
+            "id": 1,
+            "title": "太聰明 (Official MV)",
+            "album": "陳綺貞精選",
+            "videoId": "33rdx577PxY"
+      },
+      {
+            "id": 2,
+            "title": "旅行的意義",
+            "album": "陳綺貞精選",
+            "videoId": "tv95k0zqnaA"
+      },
+      {
+            "id": 3,
+            "title": "還是會寂寞",
+            "album": "陳綺貞精選",
+            "videoId": "ZsiN2YVrdmA"
+      },
+      {
+            "id": 4,
+            "title": "每天都是一種練習",
+            "album": "陳綺貞精選",
+            "videoId": "E9u0EBdQThw"
+      },
+      {
+            "id": 5,
+            "title": "吉他手 Groupies",
+            "album": "陳綺貞精選",
+            "videoId": "t_qY5dXbzzw"
+      },
+      {
+            "id": 6,
+            "title": "告訴我",
+            "album": "陳綺貞精選",
+            "videoId": "mJsT0i95cAY"
+      },
+      {
+            "id": 7,
+            "title": "偶然與巧合",
+            "album": "陳綺貞精選",
+            "videoId": "a7qGVVlTfvw"
+      },
+      {
+            "id": 8,
+            "title": "華麗的冒險",
+            "album": "陳綺貞精選",
+            "videoId": "fE-RUy7bYxk"
+      },
+      {
+            "id": 9,
+            "title": "九份的咖啡店 (Live)",
+            "album": "陳綺貞精選",
+            "videoId": "nDi82SWcIeM"
+      },
+      {
+            "id": 10,
+            "title": "躺在你的衣櫃",
+            "album": "陳綺貞精選",
+            "videoId": "BPNXyVzJjtw"
+      },
+      {
+            "id": 11,
+            "title": "小步舞曲 (Live)",
+            "album": "陳綺貞精選",
+            "videoId": "-bVpKjxZbuc"
+      },
+      {
+            "id": 12,
+            "title": "魚 The Edge (Live)",
+            "album": "陳綺貞精選",
+            "videoId": "cPOh-iM1kO8"
+      },
+      {
+            "id": 13,
+            "title": "太陽 Immortal (Live)",
+            "album": "陳綺貞精選",
+            "videoId": "bMd2XGgKlEY"
+      },
+      {
+            "id": 14,
+            "title": "失敗者的飛翔 (Live)",
+            "album": "陳綺貞精選",
+            "videoId": "AXbbqGKdyuw"
+      },
+      {
+            "id": 15,
+            "title": "讓我想一想 (Live)",
+            "album": "陳綺貞精選",
+            "videoId": "FAICyJ8qM_Y"
+      },
+      {
+            "id": 16,
+            "title": "私奔到月球",
+            "album": "陳綺貞精選",
+            "videoId": "ASAhpOdeQQY"
+      },
+      {
+            "id": 17,
+            "title": "坐火車到傳說中的湘南海岸",
+            "album": "《Demo 3》",
+            "videoId": "TWk3SiESMk0"
+      },
+      {
+            "id": 18,
+            "title": "80% 完美的日子",
+            "album": "陳綺貞精選",
+            "videoId": "h3Rdw_NOQ3s"
+      },
+      {
+            "id": 19,
+            "title": "就算全世界與我為敵",
+            "album": "陳綺貞精選",
+            "videoId": "bVsa8RP71rg"
+      },
+      {
+            "id": 20,
+            "title": "溫室花朵",
+            "album": "陳綺貞精選",
+            "videoId": "J0Wumn2Ucmo"
+      },
+      {
+            "id": 21,
+            "title": "下個星期去英國",
+            "album": "陳綺貞精選",
+            "videoId": "sAtziErzpcU"
+      },
+      {
+            "id": 22,
+            "title": "下午三點",
+            "album": "陳綺貞精選",
+            "videoId": "FdJF0y5a4yU"
+      },
+      {
+            "id": 23,
+            "title": "送別",
+            "album": "陳綺貞精選",
+            "videoId": "FCMcGXHFrOA"
+      },
+      {
+            "id": 24,
+            "title": "微涼的你",
+            "album": "陳綺貞精選",
+            "videoId": "7Dq1GNuC3yE"
+      },
+      {
+            "id": 25,
+            "title": "我喜歡上你時的內心活動",
+            "album": "經典電影單曲",
+            "videoId": "7RKmNBmXz4o"
+      },
+      {
+            "id": 26,
+            "title": "狂戀",
+            "album": "陳綺貞精選",
+            "videoId": "FVmv9eBMmE8"
+      },
+      {
+            "id": 27,
+            "title": "孤島",
+            "album": "陳綺貞精選",
+            "videoId": "fltvF-_g1nY"
+      },
+      {
+            "id": 28,
+            "title": "嫉妒",
+            "album": "陳綺貞精選",
+            "videoId": "Vn8Q93YQuUA"
+      },
+      {
+            "id": 29,
+            "title": "會不會",
+            "album": "陳綺貞精選",
+            "videoId": "Mjy3bRULYDY"
+      },
+      {
+            "id": 30,
+            "title": "情歌",
+            "album": "陳綺貞精選",
+            "videoId": "F6zzt0igtcQ"
+      },
+      {
+            "id": 31,
+            "title": "和你在一起",
+            "album": "陳綺貞精選",
+            "videoId": "FAStyKYacZY"
+      },
+      {
+            "id": 32,
+            "title": "孩子",
+            "album": "陳綺貞精選",
+            "videoId": "x7qlnxUffpw"
+      },
+      {
+            "id": 33,
+            "title": "天使",
+            "album": "陳綺貞精選",
+            "videoId": "7awb4sBfob0"
+      },
+      {
+            "id": 34,
+            "title": "漫漫長夜",
+            "album": "陳綺貞精選",
+            "videoId": "DzqEPcgSJq0"
+      },
+      {
+            "id": 35,
+            "title": "夜遊",
+            "album": "陳綺貞精選",
+            "videoId": "DWsV6t4wx4U"
+      },
+      {
+            "id": 36,
+            "title": "慢歌3",
+            "album": "陳綺貞作品輯",
+            "videoId": "2y7lriIVSt4"
+      },
+      {
+            "id": 37,
+            "title": "越洋電話",
+            "album": "陳綺貞作品輯",
+            "videoId": "Kgk7I-FL7dI"
+      },
+      {
+            "id": 38,
+            "title": "我的驕傲無可救藥",
+            "album": "陳綺貞作品輯",
+            "videoId": "ymmIl23qEWc"
+      },
+      {
+            "id": 39,
+            "title": "午餐的約會",
+            "album": "陳綺貞作品輯",
+            "videoId": "iYoLChhP04w"
+      },
+      {
+            "id": 40,
+            "title": "慢歌1",
+            "album": "陳綺貞作品輯",
+            "videoId": "ZITm1BpV6Kc"
+      },
+      {
+            "id": 41,
+            "title": "靈感",
+            "album": "陳綺貞作品輯",
+            "videoId": "pFutzOsP50w"
+      },
+      {
+            "id": 42,
+            "title": "他唱起歌來了",
+            "album": "陳綺貞作品輯",
+            "videoId": "utJ9xtBcMsc"
+      },
+      {
+            "id": 43,
+            "title": "其實我很羨慕你",
+            "album": "陳綺貞作品輯",
+            "videoId": "7CAL3LqzT8U"
+      },
+      {
+            "id": 44,
+            "title": "媽媽睡了",
+            "album": "陳綺貞作品輯",
+            "videoId": "Ea7PvAlIY8A"
+      },
+      {
+            "id": 45,
+            "title": "等待",
+            "album": "陳綺貞經典選集",
+            "videoId": "we9C9lILbUo"
+      },
+      {
+            "id": 46,
+            "title": "我們連覺也沒睡決定連夜趕去拜訪艾立剋剋萊普頓",
+            "album": "《Demo 3》",
+            "videoId": "Hpk0QdkSIg8"
+      },
+      {
+            "id": 47,
+            "title": "我喜歡木村拓哉",
+            "album": "陳綺貞經典選集",
+            "videoId": "BZA0a0279KA"
+      },
+      {
+            "id": 48,
+            "title": "我有一套限量的約翰藍儂紀念郵票",
+            "album": "《Demo 3》",
+            "videoId": "NI6zWTNyy6I"
+      },
+      {
+            "id": 49,
+            "title": "我還是如此的清醒",
+            "album": "陳綺貞經典選集",
+            "videoId": "_JRuFL7S-aA"
+      },
+      {
+            "id": 50,
+            "title": "整個世界的黑暗",
+            "album": "陳綺貞經典選集",
+            "videoId": "ch10N_22TtA"
+      },
+      {
+            "id": 51,
+            "title": "夢",
+            "album": "《Demo 3》",
+            "videoId": "TJg-E5E96vQ"
+      },
+      {
+            "id": 52,
+            "title": "黃色的浮板",
+            "album": "《Demo 3》",
+            "videoId": "bgz4NwJBdx0"
+      },
+      {
+            "id": 53,
+            "title": "我親愛的偏執狂",
+            "album": "陳綺貞精選",
+            "videoId": "GT1p0pUckZU"
+      },
+      {
+            "id": 54,
+            "title": "1234567",
+            "album": "陳綺貞精選",
+            "videoId": "JBSInle1U3Q"
+      },
+      {
+            "id": 55,
+            "title": "隨便說說",
+            "album": "陳綺貞精選",
+            "videoId": "LjXmmEMLuks"
+      },
+      {
+            "id": 56,
+            "title": "A Practice",
+            "album": "陳綺貞精選",
+            "videoId": "zCk9ZwMVhTc"
+      },
+      {
+            "id": 57,
+            "title": "黑眼圈",
+            "album": "陳綺貞精選",
+            "videoId": "5rLif37MqgE"
+      },
+      {
+            "id": 58,
+            "title": "不應該",
+            "album": "陳綺貞精選",
+            "videoId": "gicWcFRmPCo"
+      },
+      {
+            "id": 59,
+            "title": "After 17",
+            "album": "陳綺貞精選",
+            "videoId": "4vj3RkD49xY"
+      },
+      {
+            "id": 60,
+            "title": "雨天的尾巴",
+            "album": "經典單曲",
+            "videoId": "EVlQITruZRs"
+      },
+      {
+            "id": 61,
+            "title": "小塵埃",
+            "album": "華麗的冒險",
+            "videoId": "82dZmGp6htw"
+      },
+      {
+            "id": 62,
+            "title": "花的姿態",
+            "album": "華麗的冒險",
+            "videoId": "m5OREnlP2gU"
+      },
+      {
+            "id": 63,
+            "title": "腐朽",
+            "album": "華麗的冒險",
+            "videoId": "Pw9jk8eAg54"
+      },
+      {
+            "id": 64,
+            "title": "Sentimental Kills",
+            "album": "經典單曲",
+            "videoId": "bZvDHyEmTKk"
+      }
+];
+
+    let playerMode = 'youtube'; // 'youtube' | 'local'
+    let selectedBracketSize = 64;
+    let isCardPaused = { left: false, right: false };
+    let currentPool = [];
+    let nextRoundPool = [];
+    let currentPair = { left: null, right: null };
+    let leftSong = null;
+    let rightSong = null;
+    let matchIndex = 0;
+    let battleHistory = [];
+    let currentRoundName = "64強海選";
+    let matchHistory = [];
+    let isVoting = false;
+    let activeAudioSide = 'left';
+
+    let ytPlayers = { left: null, right: null, champion: null };
+    let ytApiReady = false;
+    let seekbarInterval = null;
+    let isSeeking = { left: false, right: false };
+    let matchTimerInterval = null;
+    let secondsElapsed = 0;
+
+    const scriptTag = document.createElement('script');
+    scriptTag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(scriptTag);
+
+    function onYouTubeIframeAPIReady() {
+      ytApiReady = true;
+      console.log("YouTube IFrame API Ready");
+    }
+
+    function setPlayerMode(mode) {
+      playerMode = mode;
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(`btn-mode-${mode === 'youtube' ? 'yt' : 'local'}`).classList.add('active');
+      
+      const modeTextEl = document.getElementById('mode-text');
+      if (mode === 'youtube') {
+        modeTextEl.innerText = "2pick IFrame 動態載入模式";
+      } else {
+        modeTextEl.innerText = "下載/本地 MP4 直連模式";
+      }
+    }
+
+    function selectBracket(size, element) {
+      selectedBracketSize = size;
+      document.querySelectorAll('.bracket-btn').forEach(btn => btn.classList.remove('selected'));
+      element.classList.add('selected');
+    }
+
+    function startGame() {
+      try { localStorage.removeItem('CHEER_2PICK_SAVE'); } catch(e){}
+      battleHistory = [];
+      battleHistory = [];
+      matchIndex = 0;
+      startTimer();
+
+      // Setup tournament pool
+      const poolSize = Math.min(selectedBracketSize, CHEER_SONGS.length);
+      const shuffled = [...CHEER_SONGS].sort(() => Math.random() - 0.5);
+      currentPool = shuffled.slice(0, poolSize);
+      nextRoundPool = [];
+
+      // Determine round title
+      if (poolSize === 64) currentRoundName = "64強海選";
+      else if (poolSize === 32) currentRoundName = "32強進擊";
+      else if (poolSize === 16) currentRoundName = "16強經典";
+      else if (poolSize === 8) currentRoundName = "8強快閃";
+      else if (poolSize === 4) currentRoundName = "4強準決賽";
+      else currentRoundName = `${poolSize}強對決`;
+
+      const roundTitleEl = document.getElementById('round-title-text');
+      if (roundTitleEl) roundTitleEl.innerText = currentRoundName;
+
+      switchScreen('battle-screen');
+      prepareNextMatch();
+    }
+
+    
+    const ALBUM_TIMELINE = [
+      {
+        id: "1998",
+        title: "《讓我想一想》",
+        year: "1998年7月 (首張個人創作專輯)",
+        desc: "滾石唱片發行。極致純真的民謠出發，奠定清新吟唱詩人風格，入圍金曲獎最佳新人。",
+        keywords: ["讓我想一想", "微涼的你", "會不會", "情歌", "和你在一起", "孩子", "天使", "漫漫長夜", "夜遊", "送別"]
+      },
+      {
+        id: "2000",
+        title: "《還是會寂寞》",
+        year: "2000年4月 (第二張經典大碟)",
+        desc: "魔岩唱片發行。結合 Bossa Nova 與另類流行，橫掃各大音樂排行榜與金曲獎提名。",
+        keywords: ["還是會寂寞", "告訴我", "慢歌1", "靈感", "九份的咖啡店", "他唱起歌來了", "其實我很羨慕你", "午餐的約會", "等待", "我喜歡木村拓哉", "溫室花朵", "慢歌3", "越洋電話"]
+      },
+      {
+        id: "demo3",
+        title: "《Demo 3》",
+        year: "2001年11月 (經典居家概念創作專輯)",
+        desc: "在房間裡用最樸素而溫暖的方式記錄創作原貌，收錄《湘南海岸》、《約翰藍儂郵票》等經典獨白。",
+        keywords: ["坐火車到傳說中的湘南海岸", "我們連覺也沒睡決定連夜趕去拜訪", "我有一套限量的約翰藍儂紀念郵票", "黃色的浮板", "夢"]
+      },
+      {
+        id: "2002",
+        title: "《Groupies 吉他手》",
+        year: "2002年8月 (搖滾與抒情經典巔峰)",
+        desc: "搖滾與甜美兼具的神作專輯。收錄《吉他手》、《太聰明》、《小步舞曲》等永遠的青春頌歌。",
+        keywords: ["吉他手", "太聰明", "小步舞曲", "躺在你的衣櫃", "就算全世界與我為敵", "我親愛的偏執狂", "1234567", "隨便說說", "黑眼圈", "不應該"]
+      },
+      {
+        id: "2005",
+        title: "《華麗的冒險 A Magnificent Adventure》",
+        year: "2005年9月 (獨立製作標竿首部曲)",
+        desc: "成立添翼創越後的首張大碟，首部曲代表作。獲金曲獎最佳專輯製作人獎與最佳音樂錄影帶獎。",
+        keywords: ["旅行的意義", "華麗的冒險", "腐朽", "Sentimental Kills", "花的姿態", "小塵埃", "表面的和平", "Self"]
+      },
+      {
+        id: "2009",
+        title: "《太陽 Immortal》",
+        year: "2009年1月 (重現生命光熱二部曲)",
+        desc: "在自宅與錄音室完成，展現強大生命韌度與愛，收錄《太陽》、《魚》、《失敗者的飛翔》。",
+        keywords: ["太陽", "魚", "失敗者的飛翔", "下個星期去英國", "手扶梯的最後", "下午三點"]
+      },
+      {
+        id: "singles",
+        title: "《精選單曲、電影主題曲與對唱企劃》",
+        year: "歷年精選單曲 / 電影名曲 / Live 現場",
+        desc: "收錄跨界對唱、電影經典單曲與現場精彩時刻，記錄每一段獨一無二的綺貞創作軌跡。",
+        keywords: ["私奔到月球", "每天都是一種練習", "偶然與巧合", "After 17", "A Practice", "80% 完美的日子", "狂戀", "孤島", "嫉妒", "我喜歡上你時的內心活動", "雨天的尾巴"]
+      }
+    ];
+
+    let currentDiscoFilter = 'ALL';
+    let currentDiscoQuery = '';
+
+    function openDiscography() {
+      switchScreen('discography-screen');
+      const searchInput = document.getElementById('disco-search-input');
+      if (searchInput) searchInput.value = '';
+      currentDiscoQuery = '';
+      const clearBtn = document.getElementById('clear-search-btn');
+      if (clearBtn) clearBtn.classList.add('hidden');
+      renderDiscography('ALL');
+    }
+
+    function filterDiscographyBySearch(val) {
+      currentDiscoQuery = val.trim().toLowerCase();
+      const clearBtn = document.getElementById('clear-search-btn');
+      if (clearBtn) {
+        if (currentDiscoQuery.length > 0) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+      }
+      renderDiscography(currentDiscoFilter);
+    }
+
+    function clearDiscoSearch() {
+      const input = document.getElementById('disco-search-input');
+      if (input) input.value = '';
+      filterDiscographyBySearch('');
+    }
+
+    function renderDiscography(filterId) {
+      currentDiscoFilter = filterId;
+      const filterBar = document.getElementById('disco-filter-bar');
+      const listContainer = document.getElementById('disco-timeline-list');
+      if (!filterBar || !listContainer) return;
+
+      let filterHtml = `<button class="disco-filter-btn ${filterId === 'ALL' ? 'active' : ''}" onclick="renderDiscography('ALL')">全部時間軸 (${CHEER_SONGS.length}曲)</button>`;
+      ALBUM_TIMELINE.forEach(album => {
+        filterHtml += `<button class="disco-filter-btn ${filterId === album.id ? 'active' : ''}" onclick="renderDiscography('${album.id}')">${album.title}</button>`;
+      });
+      filterBar.innerHTML = filterHtml;
+
+      let listHtml = '';
+      let assignedSongIds = new Set();
+      let totalShownCount = 0;
+
+      const targetAlbums = filterId === 'ALL' ? ALBUM_TIMELINE : ALBUM_TIMELINE.filter(a => a.id === filterId);
+
+      targetAlbums.forEach(album => {
+        const matchedSongs = CHEER_SONGS.filter(s => {
+          if (assignedSongIds.has(s.id)) return false;
+          const belongsToAlbum = album.keywords.some(k => s.title.includes(k)) || (s.album && s.album.includes(album.title));
+          if (!belongsToAlbum) return false;
+
+          if (currentDiscoQuery !== '') {
+            const matchTitle = s.title.toLowerCase().includes(currentDiscoQuery);
+            const matchAlbum = album.title.toLowerCase().includes(currentDiscoQuery) || album.year.toLowerCase().includes(currentDiscoQuery);
+            return matchTitle || matchAlbum;
+          }
+          return true;
+        });
+
+        matchedSongs.forEach(s => assignedSongIds.add(s.id));
+
+        if (matchedSongs.length > 0) {
+          totalShownCount += matchedSongs.length;
+          listHtml += `
+            <div class="album-section">
+              <div class="album-meta">
+                <div class="album-title-box">
+                  <h3>${album.title} <span class="album-year-badge">${album.year}</span></h3>
+                  <p class="album-desc">${album.desc}</p>
+                </div>
+              </div>
+              <div class="tracks-grid">`;
+          
+          matchedSongs.forEach((song, idx) => {
+            const vid = extractVideoId(song);
+            const ytUrl = `https://www.youtube.com/watch?v=${vid}`;
+            listHtml += `
+              <a href="${ytUrl}" target="_blank" class="disco-track-card" title="點擊前往 YouTube 原片源觀看">
+                <div class="track-info">
+                  <span class="track-num">#${song.id}</span>
+                  <span>${song.title}</span>
+                </div>
+                <div class="yt-link-btn">
+                  <i class="fa-brands fa-youtube"></i> 原片源
+                </div>
+              </a>`;
+          });
+
+          listHtml += `
+              </div>
+            </div>`;
+        }
+      });
+
+      if (filterId === 'ALL') {
+        let remainingSongs = CHEER_SONGS.filter(s => !assignedSongIds.has(s.id));
+        if (currentDiscoQuery !== '') {
+          remainingSongs = remainingSongs.filter(s => s.title.toLowerCase().includes(currentDiscoQuery) || (s.album && s.album.toLowerCase().includes(currentDiscoQuery)));
+        }
+
+        if (remainingSongs.length > 0) {
+          totalShownCount += remainingSongs.length;
+          listHtml += `
+            <div class="album-section">
+              <div class="album-meta">
+                <div class="album-title-box">
+                  <h3>《其他精選與經典創作》 <span class="album-year-badge">金曲庫</span></h3>
+                  <p class="album-desc">更多精彩經典與獨立發行單曲。</p>
+                </div>
+              </div>
+              <div class="tracks-grid">`;
+          remainingSongs.forEach((song, idx) => {
+            const vid = extractVideoId(song);
+            const ytUrl = `https://www.youtube.com/watch?v=${vid}`;
+            listHtml += `
+              <a href="${ytUrl}" target="_blank" class="disco-track-card" title="點擊前往 YouTube 原片源觀看">
+                <div class="track-info">
+                  <span class="track-num">#${song.id}</span>
+                  <span>${song.title}</span>
+                </div>
+                <div class="yt-link-btn">
+                  <i class="fa-brands fa-youtube"></i> 原片源
+                </div>
+              </a>`;
+          });
+          listHtml += `</div></div>`;
+        }
+      }
+
+      if (totalShownCount === 0 && currentDiscoQuery !== '') {
+        listHtml = `
+          <div class="empty-search-state" style="text-align: center; padding: 3.5rem 1rem; color: var(--text-muted); font-size: 1.15rem; background: rgba(0,0,0,0.3); border-radius: 20px; border: 1px dashed var(--border-glass);">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 2.8rem; margin-bottom: 1rem; color: var(--accent); opacity: 0.7;"></i>
+            <p>找不到與「<b style="color: var(--accent);${currentDiscoQuery}</b>」相關的歌曲或專輯記錄，請試試其他關鍵字！</p>
+          </div>`;
+      }
+
+      listContainer.innerHTML = listHtml;
+    }
+
+    
+    function stopAllMediaAndIframes() {
+      ['left', 'right', 'champion'].forEach(side => {
+        if (ytPlayers[side]) {
+          try { ytPlayers[side].stopVideo(); } catch(e){}
+          try { ytPlayers[side].pauseVideo(); } catch(e){}
+          try { ytPlayers[side].destroy(); } catch(e){}
+          ytPlayers[side] = null;
+        }
+        const container = document.getElementById(`player-${side}-container`);
+        if (container) container.innerHTML = '';
+        const vidEl = document.getElementById(`video-${side}`);
+        if (vidEl) { vidEl.pause(); vidEl.src = ''; }
+      });
+      if (typeof stopTimer === 'function') stopTimer();
+      if (typeof stopSeekbarTracker === 'function') stopSeekbarTracker();
+    }
+
+    function confirmExitToHome() {
+      if (confirm("確定要返回首頁重新選擇對決規模嗎？（當前對決紀錄將不會保留）")) {
+        stopAllMediaAndIframes();
+        switchScreen('intro-screen');
+      }
+    }
+
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen').forEach(el => el.classList.remove('active'));
+      const target = document.getElementById(screenId);
+      if (target) target.classList.add('active');
+      if (screenId === 'intro-screen') stopAllMediaAndIframes();
+    }
+
+    function extractVideoId(song) {
+      if (!song) return '33rdx577PxY';
+      if (song.videoId) return song.videoId;
+      if (song.url) {
+        let m = song.url.match(/(?:youtu\.be\/|youtube\.com\/(?:embed\/|v\/|watch\?v=|watch\?.+&v=))([\w-]{11})/);
+        if (m && m[1]) return m[1];
+      }
+      return '33rdx577PxY';
+    }
+
+    function prepareNextMatch() {
+      isVoting = false;
+
+      if (currentPool.length === 0 && nextRoundPool.length === 0) {
+        if (matchHistory.length > 0) {
+          showChampion(matchHistory[matchHistory.length - 1].winner);
+        }
+        return;
+      }
+
+      if (currentPool.length < 2) {
+        if (currentPool.length === 1) {
+          nextRoundPool.push(currentPool[0]);
+        }
+        currentPool = [...nextRoundPool];
+        nextRoundPool = [];
+
+        if (currentPool.length <= 1) {
+          if (currentPool.length === 1) {
+            showChampion(currentPool[0]);
+          }
+          return;
+        }
+      }
+
+      leftSong = currentPool.shift();
+      rightSong = currentPool.shift();
+
+      if (!leftSong || !rightSong) {
+        if (leftSong) nextRoundPool.push(leftSong);
+        if (rightSong) nextRoundPool.push(rightSong);
+        prepareNextMatch();
+        return;
+      }
+
+      currentPair = { left: leftSong, right: rightSong };
+      if (!matchIndex) matchIndex = 0;
+
+      updateMatchHeader();
+      startSeekbarTracker();
+      startTimer();
+
+      ['left', 'right'].forEach(side => {
+        const song = currentPair[side];
+        const titleEl = document.getElementById(`title-${side}`);
+        if (titleEl) titleEl.innerText = song.title || '';
+        const albumEl = document.getElementById(`album-${side}`);
+        if (albumEl) albumEl.innerText = song.album || '';
+        const btnTextEl = document.getElementById(`btn-text-${side}`);
+        if (btnTextEl) btnTextEl.innerText = song.title || '';
+        const stamp = document.getElementById(`stamp-${side}`);
+        if (stamp) stamp.classList.remove('show');
+        const overlay = document.getElementById(`overlay-${side}`);
+        if (overlay) overlay.classList.add('hidden');
+
+        if (ytPlayers[side] && typeof ytPlayers[side].destroy === 'function') {
+          try { ytPlayers[side].destroy(); } catch(e){}
+          ytPlayers[side] = null;
+        }
+        const container = document.getElementById(`player-${side}-container`);
+        if (container) container.innerHTML = '';
+        
+        const thumbImg = document.getElementById(`thumb-${side}`);
+        let vid = extractVideoId(song);
+        if (thumbImg) {
+          thumbImg.src = `https://i.ytimg.com/vi/${vid}/hqdefault.jpg`;
+          thumbImg.style.display = 'block';
+        }
+        isCardPaused[side] = false;
+        const pauseBtn = document.getElementById(`pause-btn-${side}`);
+        if (pauseBtn) {
+          pauseBtn.classList.remove('paused');
+          pauseBtn.innerHTML = `<i class="fa-solid fa-pause"></i> <span>暫停試聽 (思考一下)</span>`;
+        }
+      });
+
+      if (playerMode === 'youtube') {
+        setTimeout(() => {
+          if (currentPair['left'] && !isVoting) buildAndPlay2pickIframe('left', currentPair['left']);
+          if (currentPair['right'] && !isVoting) buildAndPlay2pickIframe('right', currentPair['right']);
+        }, 150);
+      } else {
+        loadLocalMedia('left', currentPair['left']);
+        loadLocalMedia('right', currentPair['right']);
+      }
+
+      setTimeout(() => {
+        if (typeof focusCard === 'function') focusCard('left');
+      }, 350);
+    }
+
+    function startSeekbarTracker() {
+      if (seekbarInterval) clearInterval(seekbarInterval);
+      seekbarInterval = setInterval(() => {
+        ['left', 'right'].forEach(side => {
+          if (isVoting || isSeeking[side] || !currentPair || !currentPair[side]) return;
+          const timeEl = document.getElementById(`time-text-${side}`);
+          const seekEl = document.getElementById(`seekbar-${side}`);
+          if (!timeEl || !seekEl) return;
+
+          let cur = 0;
+          let dur = 0;
+          if (playerMode === 'youtube' && ytPlayers[side] && typeof ytPlayers[side].getCurrentTime === 'function') {
+            try {
+              cur = ytPlayers[side].getCurrentTime() || 0;
+              dur = ytPlayers[side].getDuration() || 0;
+            } catch(e){}
+          } else {
+            const vid = document.getElementById(`video-${side}`);
+            if (vid && !isNaN(vid.duration)) {
+              cur = vid.currentTime || 0;
+              dur = vid.duration || 0;
+            }
+          }
+
+          if (dur > 0) {
+            const pct = (cur / dur) * 100;
+            seekEl.value = pct;
+            const curM = String(Math.floor(cur / 60)).padStart(2, '0');
+            const curS = String(Math.floor(cur % 60)).padStart(2, '0');
+            const durM = String(Math.floor(dur / 60)).padStart(2, '0');
+            const durS = String(Math.floor(dur % 60)).padStart(2, '0');
+            timeEl.innerText = `${curM}:${curS} / ${durM}:${durS}`;
+          }
+        });
+      }, 500);
+    }
+
+    function stopSeekbarTracker() {
+      if (seekbarInterval) clearInterval(seekbarInterval);
+    }
+
+    function seekStep(side, seconds, event) {
+      if (event) event.stopPropagation();
+      if (isVoting || !currentPair || !currentPair[side]) return;
+      if (playerMode === 'youtube' && ytPlayers[side] && typeof ytPlayers[side].getCurrentTime === 'function') {
+        try {
+          const cur = ytPlayers[side].getCurrentTime() || 0;
+          const dur = ytPlayers[side].getDuration() || 0;
+          let target = Math.max(0, Math.min(dur, cur + seconds));
+          ytPlayers[side].seekTo(target, true);
+        } catch(e){}
+      } else {
+        const vid = document.getElementById(`video-${side}`);
+        if (vid && !isNaN(vid.duration)) {
+          vid.currentTime = Math.max(0, Math.min(vid.duration, vid.currentTime + seconds));
+        }
+      }
+    }
+
+    function seekCardTo(side, percent, event) {
+      if (event) event.stopPropagation();
+      let dur = 0;
+      if (playerMode === 'youtube' && ytPlayers[side] && typeof ytPlayers[side].getDuration === 'function') {
+        try {
+          dur = ytPlayers[side].getDuration() || 0;
+          if (dur > 0) {
+            const targetTime = (percent / 100) * dur;
+            ytPlayers[side].seekTo(targetTime, true);
+          }
+        } catch(e){}
+      } else {
+        const vid = document.getElementById(`video-${side}`);
+        if (vid && !isNaN(vid.duration) && vid.duration > 0) {
+          const targetTime = (percent / 100) * vid.duration;
+          vid.currentTime = targetTime;
+        }
+      }
+    }
+
+    function togglePauseCard(side, event) {
+      if (event) event.stopPropagation();
+      if (isVoting || !currentPair || !currentPair[side]) return;
+      
+      isCardPaused[side] = !isCardPaused[side];
+      const pauseBtn = document.getElementById(`pause-btn-${side}`);
+      const pill = document.getElementById(`pill-${side}`);
+
+      if (isCardPaused[side]) {
+        if (pauseBtn) {
+          pauseBtn.classList.add('paused');
+          pauseBtn.innerHTML = `<i class="fa-solid fa-play"></i> <span>繼續試聽</span>`;
+        }
+        if (pill) {
+          pill.classList.remove('playing');
+          pill.innerHTML = `<i class="fa-solid fa-pause"></i> 已暫停`;
+        }
+        if (playerMode === 'youtube' && ytPlayers[side] && typeof ytPlayers[side].pauseVideo === 'function') {
+          try { ytPlayers[side].pauseVideo(); } catch(e){}
+        } else {
+          const vid = document.getElementById(`video-${side}`);
+          if (vid) vid.pause();
+        }
+      } else {
+        if (pauseBtn) {
+          pauseBtn.classList.remove('paused');
+          pauseBtn.innerHTML = `<i class="fa-solid fa-pause"></i> <span>暫停試聽 (思考一下)</span>`;
+        }
+        focusCard(side);
+      }
+    }
+
+    function focusCard(side) {
+      if (isVoting || !currentPair || !currentPair[side]) return;
+      activeAudioSide = side;
+      const otherSide = side === 'left' ? 'right' : 'left';
+
+      if (!isCardPaused[side]) {
+        const targetPill = document.getElementById(`pill-${side}`);
+        if (targetPill) {
+          targetPill.classList.add('playing');
+          targetPill.innerHTML = `<i class="fa-solid fa-volume-high"></i> 試聽中`;
+        }
+      }
+      const targetCard = document.getElementById(`card-${side}`);
+      if (targetCard) targetCard.classList.add('active-focus');
+
+      const otherPill = document.getElementById(`pill-${otherSide}`);
+      if (otherPill) {
+        otherPill.classList.remove('playing');
+        otherPill.innerHTML = `<i class="fa-solid fa-volume-xmark"></i> 已靜音`;
+      }
+      const otherCard = document.getElementById(`card-${otherSide}`);
+      if (otherCard) otherCard.classList.remove('active-focus');
+
+      if (playerMode === 'youtube') {
+        if (ytPlayers[otherSide] && typeof ytPlayers[otherSide].mute === 'function') {
+          try { ytPlayers[otherSide].mute(); } catch(e){}
+        }
+
+        if (!ytPlayers[side]) {
+          buildAndPlay2pickIframe(side, currentPair[side]);
+        } else if (!isCardPaused[side]) {
+          try {
+            if (typeof ytPlayers[side].unMute === 'function') ytPlayers[side].unMute();
+            if (typeof ytPlayers[side].playVideo === 'function') ytPlayers[side].playVideo();
+          } catch(e){}
+        }
+      } else {
+        const targetVid = document.getElementById(`video-${side}`);
+        const otherVid = document.getElementById(`video-${otherSide}`);
+        if (otherVid) otherVid.muted = true;
+        if (targetVid && targetVid.src && !isCardPaused[side]) { targetVid.muted = false; targetVid.play().catch(()=>{}); }
+      }
+    }
+
+    function buildAndPlay2pickIframe(side, song) {
+      if (!ytApiReady || !song || isVoting) return;
+
+      const vid = extractVideoId(song);
+      const containerId = `player-${side}-container`;
+      const currentOrigin = window.location.protocol.startsWith('http') ? window.location.origin : undefined;
+
+      const playerVars = {
+        controls: 1,
+        autoplay: 1,
+        rel: 0,
+        enablejsapi: 1,
+        origin: currentOrigin
+      };
+      if (typeof song.start === 'number' && song.start > 0) playerVars.start = song.start;
+      if (typeof song.end === 'number' && song.end > 0) playerVars.end = song.end;
+
+      if (ytPlayers[side] && typeof ytPlayers[side].destroy === 'function') {
+        try { ytPlayers[side].destroy(); } catch(e){}
+      }
+
+      ytPlayers[side] = new YT.Player(containerId, {
+        height: '100%',
+        width: '100%',
+        videoId: vid,
+        playerVars: playerVars,
+        events: {
+          'onReady': (event) => {
+            if (activeAudioSide === side && !isVoting && !isCardPaused[side]) {
+              try { event.target.unMute(); event.target.playVideo(); } catch(e){}
+            } else {
+              try { event.target.mute(); event.target.playVideo(); } catch(e){}
+            }
+          },
+          'onStateChange': (event) => {
+            if (event.data === 1 && !isVoting) {
+              const thumb = document.getElementById(`thumb-${side}`);
+              if (thumb) thumb.style.display = 'none';
+            }
+          },
+          'onError': (event) => onPlayerError(side, event)
+        }
+      });
+    }
+
+    function loadLocalMedia(side, song) {
+      const htmlVideo = document.getElementById(`video-${side}`);
+      const ytBox = document.getElementById(`player-${side}-container`);
+      if (ytBox) ytBox.style.display = 'none';
+
+      if (song && song.localAudio && htmlVideo) {
+        htmlVideo.src = song.localAudio;
+        htmlVideo.classList.remove('hidden');
+        if (activeAudioSide === side && !isVoting) {
+          htmlVideo.muted = false;
+          htmlVideo.play().catch(()=>{});
+        } else {
+          htmlVideo.muted = true;
+          htmlVideo.play().catch(()=>{});
+        }
+      }
+    }
+
+    function onPlayerError(side, event) {
+      const errCode = event.data;
+      const song = currentPair ? currentPair[side] : null;
+      if (!song) return;
+      console.warn(`[YouTube Error] Side: ${side}, Code: ${errCode}, Song: ${song.title}`);
+
+      if ([101, 150, 153].includes(errCode)) {
+        const thumb = document.getElementById(`thumb-${side}`);
+        if (thumb) thumb.style.display = 'block';
+        const overlay = document.getElementById(`overlay-${side}`);
+        if (overlay) overlay.classList.remove('hidden');
+
+        const vid = extractVideoId(song);
+        const extUrl = `https://www.youtube.com/watch?v=${vid}&t=${song.start||0}s`;
+        const extLink = document.getElementById(`ext-link-${side}`);
+        if (extLink) extLink.href = extUrl;
+      }
+    }
+
+    function voteSong(winnerSide, event) {
+      if (event) event.stopPropagation();
+      if (isVoting || !currentPair) return;
+      isVoting = true;
+
+      const loserSide = winnerSide === 'left' ? 'right' : 'left';
+      const winnerSong = currentPair[winnerSide];
+      const loserSong = currentPair[loserSide];
+
+      const stamp = document.getElementById(`stamp-${winnerSide}`);
+      if (stamp) stamp.classList.add('show');
+      const winCard = document.getElementById(`card-${winnerSide}`);
+      if (winCard) winCard.classList.add('winning');
+      const loseCard = document.getElementById(`card-${loserSide}`);
+      if (loseCard) loseCard.classList.add('losing');
+
+      ['left', 'right'].forEach(side => {
+        if (ytPlayers[side] && typeof ytPlayers[side].pauseVideo === 'function') {
+          try { ytPlayers[side].pauseVideo(); } catch(e){}
+        }
+        const vid = document.getElementById(`video-${side}`);
+        if (vid) vid.pause();
+      });
+
+      matchHistory.push({
+        matchNumber: matchIndex + 1,
+        winner: winnerSong,
+        loser: loserSong,
+        round: currentRoundName
+      });
+      nextRoundPool.push(winnerSong);
+      matchIndex++;
+
+      setTimeout(() => {
+        if (winCard) winCard.classList.remove('winning');
+        if (loseCard) loseCard.classList.remove('losing');
+        if (stamp) stamp.classList.remove('show');
+        prepareNextMatch();
+      }, 700);
+    }
+
+    function updateMatchHeader() {
+      const totalRemaining = currentPool.length + 2 + nextRoundPool.length;
+      let roundName = "16強海選";
+      if (totalRemaining <= 2) roundName = "🏆 最終總冠軍戰";
+      else if (totalRemaining <= 4) roundName = "🔥 4強準決賽";
+      else if (totalRemaining <= 8) roundName = "⚡ 8強半決賽";
+      else roundName = currentRoundName || "海選對決";
+
+      const roundTitleEl = document.getElementById('round-title-text');
+      if (roundTitleEl) roundTitleEl.innerText = roundName;
+      const remainEl = document.getElementById('remain-text');
+      if (remainEl) remainEl.innerText = `剩餘候選: ${totalRemaining} 首`;
+
+      const totalMatchesNeeded = selectedBracketSize - 1;
+      const currentMatchNum = matchHistory.length + 1;
+      const progressTxt = document.getElementById('match-progress-text');
+      if (progressTxt) progressTxt.innerText = `(第 ${currentMatchNum} / ${totalMatchesNeeded} 場)`;
+      
+      const percent = Math.min(100, Math.round((matchHistory.length / totalMatchesNeeded) * 100));
+      const progFill = document.getElementById('progress-fill');
+      if (progFill) progFill.style.width = `${percent}%`;
+    }
+
+    function showChampion(winnerSong) {
+      stopAllMediaAndIframes();
+      switchScreen('result-screen');
+
+      const titleEl = document.getElementById('champion-title-text');
+      if (titleEl) titleEl.innerText = `《${winnerSong.title}》`;
+      const subEl = document.getElementById('champion-sub-text');
+      if (subEl) subEl.innerText = `🏆 經過 ${selectedBracketSize} 強殘酷二選一，這是你靈魂深處最重要的陳綺貞經典神曲！`;
+
+      const container = document.getElementById('champion-media-container');
+      if (!container) return;
+      container.innerHTML = '';
+
+      const vid = extractVideoId(winnerSong);
+      const currentOrigin = window.location.protocol.startsWith('http') ? window.location.origin : undefined;
+
+      ytPlayers.champion = new YT.Player('champion-media-container', {
+        height: '100%',
+        width: '100%',
+        videoId: vid,
+        playerVars: {
+          controls: 1,
+          autoplay: 1,
+          rel: 0,
+          origin: currentOrigin
+        }
+      });
+    }
+
+    function startTimer() {
+      stopTimer();
+      secondsElapsed = 0;
+      updateTimerText();
+      matchTimerInterval = setInterval(() => {
+        secondsElapsed++;
+        updateTimerText();
+      }, 1000);
+    }
+
+    function confirmRestart() {
+      if (confirm("確定要重新開始一局全新的對決嗎？")) {
+        startGame();
+      }
+    }
+
+    function stopTimer() {
+      if (matchTimerInterval) clearInterval(matchTimerInterval);
+    }
+
+    function updateTimerText() {
+      const mins = String(Math.floor(secondsElapsed / 60)).padStart(2, '0');
+      const secs = String(secondsElapsed % 60).padStart(2, '0');
+      document.getElementById('timer-text').innerText = `${mins}:${secs}`;
+    }
+
+    function shareResult() {
+      const champTitle = document.getElementById('champion-title-text').innerText;
+      const text = `🏆 我在【陳綺貞經典歌曲對決 | 殘酷二選一】經過一輪輪掙扎對決，我的唯一靈魂神曲是：${champTitle}！你也來挑選心目中的第一名吧！`;
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(() => {
+          alert("✅ 戰果已成功複製到剪貼簿！");
+        });
+      } else {
+        alert(text);
+      }
+    }
+  </script>
+</body>
+</html>
