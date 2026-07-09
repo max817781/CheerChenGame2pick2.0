@@ -1361,9 +1361,13 @@
         <div class="champion-media" id="champion-media-container"></div>
 
         <div class="action-group">
-          <button class="start-btn" onclick="startGame()">
+          <button class="start-btn" onclick="restartToHome()">
+            <i class="fa-solid fa-house"></i>
+            <span>返回首頁 (重新選擇海選)</span>
+          </button>
+          <button class="btn-secondary" onclick="startGame()">
             <i class="fa-solid fa-rotate-right"></i>
-            <span>重新挑戰二選一</span>
+            <span>再玩一局 (同規模二選一)</span>
           </button>
           <button class="btn-secondary" onclick="shareResult()">
             <i class="fa-solid fa-share-nodes"></i>
@@ -2401,15 +2405,60 @@
           try { ytPlayers[side].destroy(); } catch(e){}
           ytPlayers[side] = null;
         }
-        const container = document.getElementById(`player-${side}-container`);
-        if (container) container.innerHTML = '';
-        const vidEl = document.getElementById(`video-${side}`);
-        if (vidEl) { vidEl.pause(); vidEl.src = ''; }
       });
-      const champContainer = document.getElementById('champion-media-container');
-      if (champContainer) champContainer.innerHTML = '';
+
+      document.querySelectorAll('iframe').forEach(iframe => {
+        try {
+          iframe.src = 'about:blank';
+          iframe.remove();
+        } catch(e){}
+      });
+
+      const leftBox = document.querySelector('.card.left .media-box');
+      if (leftBox && !document.getElementById('player-left-container')) {
+        const d = document.createElement('div');
+        d.id = 'player-left-container';
+        d.className = 'yt-player-container';
+        leftBox.prepend(d);
+      } else {
+        const cLeft = document.getElementById('player-left-container');
+        if (cLeft) cLeft.innerHTML = '';
+      }
+
+      const rightBox = document.querySelector('.card.right .media-box');
+      if (rightBox && !document.getElementById('player-right-container')) {
+        const d = document.createElement('div');
+        d.id = 'player-right-container';
+        d.className = 'yt-player-container';
+        rightBox.prepend(d);
+      } else {
+        const cRight = document.getElementById('player-right-container');
+        if (cRight) cRight.innerHTML = '';
+      }
+
+      const champBox = document.querySelector('.result-box');
+      if (champBox && !document.getElementById('champion-media-container')) {
+        const d = document.createElement('div');
+        d.id = 'champion-media-container';
+        d.className = 'champion-media';
+        const actionGroup = champBox.querySelector('.action-group');
+        if (actionGroup) champBox.insertBefore(d, actionGroup);
+      } else {
+        const cChamp = document.getElementById('champion-media-container');
+        if (cChamp) cChamp.innerHTML = '';
+      }
+
+      document.querySelectorAll('video, audio').forEach(el => {
+        try { el.pause(); el.src = ''; } catch(e){}
+      });
+
       if (typeof stopTimer === 'function') stopTimer();
       if (typeof stopSeekbarTracker === 'function') stopSeekbarTracker();
+    }
+
+    function restartToHome() {
+      stopAllMediaAndIframes();
+      switchScreen('intro-screen');
     }
 
     function confirmExitToHome() {
